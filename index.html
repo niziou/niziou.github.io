@@ -33,7 +33,10 @@
         a:hover {
             text-decoration: underline;
         }
-        .code-block {
+        .hidden {
+            display: none;
+        }
+        .expandable {
             background-color: #2e2e2e;
             color: #dcdcdc;
             padding: 20px;
@@ -43,13 +46,38 @@
             font-size: 0.9rem;
             line-height: 1.5;
             overflow-x: auto;
+            margin-top: 20px;
+        }
+        .button {
+            cursor: pointer;
+            color: #4b0082;
+            font-weight: bold;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            margin-top: 20px;
         }
     </style>
+    <script>
+        function toggleBio() {
+            const bio = document.getElementById('bio');
+            if (bio.classList.contains('hidden')) {
+                bio.classList.remove('hidden');
+            } else {
+                bio.classList.add('hidden');
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>&gt; niziou</h1>
-    <p>A seasoned Senior Developer with over 8 years of expertise in Magento development, specializing in backend solutions, API integrations, and performance optimization. Adept at leading projects, adapting innovative themes, and ensuring seamless operations in dynamic environments. An open-source enthusiast, actively contributing to the developer community and driven by a passion for creating scalable, innovative solutions. Currently pursuing a transition into Python development to expand technical horizons and leverage strong programming fundamentals. Committed to problem-solving, collaboration, and continuous growth.<br>
-       Check out my <a href="https://github.com/niziou">github</a> and <a href="https://www.linkedin.com/in/mateusz-niziolek/">linkedIn</a> below.</p>
+    <p>I am a seasoned Senior Developer aspiring to transition into Python development.</p>
+    <button class="button" onclick="toggleBio()">Learn more about me</button>
+    <div id="bio" class="expandable hidden">
+        A seasoned Senior Developer with over 8 years of expertise in Magento development, specializing in backend solutions, API integrations, and performance optimization. Adept at leading projects, adapting innovative themes, and ensuring seamless operations in dynamic environments. An open-source enthusiast, actively contributing to the developer community and driven by a passion for creating scalable, innovative solutions. Currently pursuing a transition into Python development to expand technical horizons and leverage strong programming fundamentals. Committed to problem-solving, collaboration, and continuous growth.
+        <br><br>
+        Check out my <a href="https://github.com/niziou">GitHub</a> and <a href="https://www.linkedin.com/in/mateusz-niziolek/">LinkedIn</a>.
+    </div>
     <div class="code-block">
         &gt; niziou.currentLocation<br>
         "Cracow, Poland"<br><br>
