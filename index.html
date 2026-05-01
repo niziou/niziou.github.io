@@ -3,104 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>niziou</title>
+    <meta name="description" content="Mateusz Niziolek - Senior Backend Engineer and Tech Lead based in Krakow, Poland.">
+    <title>Mateusz Niziolek - Backend Engineer</title>
     <style>
+        :root {
+            color-scheme: light;
+            --text: #111;
+            --muted: #666;
+            --line: #e5e5e5;
+            --background: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
         body {
             margin: 0;
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #f7f7f7;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
+            background: var(--background);
+            color: var(--text);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            line-height: 1.55;
         }
+
+        main {
+            width: min(100%, 860px);
+            margin: 0 auto;
+            padding: 72px 24px 56px;
+        }
+
+        header {
+            padding-bottom: 44px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .eyebrow {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+
         h1 {
-            font-size: 2.5rem;
-            color: #4b0082;
+            margin: 0;
+            font-size: clamp(2.2rem, 8vw, 5.6rem);
+            line-height: 0.95;
+            font-weight: 700;
+            letter-spacing: 0;
         }
+
+        h2 {
+            margin: 0 0 18px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
         p {
-            font-size: 1.2rem;
-            text-align: center;
-            max-width: 600px;
-            margin-bottom: 40px;
+            margin: 0;
         }
+
+        .intro {
+            max-width: 720px;
+            margin-top: 30px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            line-height: 1.25;
+            letter-spacing: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+            gap: 56px;
+            padding: 44px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-copy {
+            max-width: 620px;
+            color: #222;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 1rem;
+        }
+
+        ul {
+            display: grid;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            color: #222;
+        }
+
+        li::before {
+            content: "- ";
+            color: var(--muted);
+        }
+
         a {
-            color: #4b0082;
-            text-decoration: none;
-            font-weight: bold;
+            color: inherit;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
         }
+
         a:hover {
-            text-decoration: underline;
+            color: var(--muted);
         }
-        .hidden {
-            display: none;
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 22px;
+            margin-top: 28px;
         }
-        .expandable {
-            background-color: #f7f7f7;
-            color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 600px;
-            font-size: 1rem;
-            line-height: 1.5;
-            margin-top: 20px;
+
+        .links a {
+            font-weight: 700;
         }
-        .code-block {
-            background-color: #2e2e2e;
-            color: #dcdcdc;
-            padding: 20px;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 600px;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            overflow-x: auto;
-            margin-top: 20px;
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            padding-top: 28px;
+            color: var(--muted);
+            font-size: 0.875rem;
         }
-        .button {
-            cursor: pointer;
-            color: #4b0082;
-            font-weight: bold;
-            border: none;
-            background: none;
-            font-size: 1rem;
-            margin-top: 20px;
-        }
-    </style>
-    <script>
-        function toggleBio() {
-            const bio = document.getElementById('bio');
-            if (bio.classList.contains('hidden')) {
-                bio.classList.remove('hidden');
-            } else {
-                bio.classList.add('hidden');
+
+        @media (max-width: 720px) {
+            main {
+                padding: 48px 20px 40px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 36px 0;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 8px;
             }
         }
-    </script>
+    </style>
 </head>
 <body>
-    <h1>&gt; niziou</h1>
-    <p>I am a seasoned Senior Developer aspiring to transition into Python development.</p>
-    <button class="button" onclick="toggleBio()">Learn more about me</button>
-    <div id="bio" class="expandable hidden">
-        <p>
-            A seasoned Senior Developer with over 8 years of expertise in Magento development, specializing in backend solutions, API integrations, and performance optimization. Adept at leading projects, adapting innovative themes, and ensuring seamless operations in dynamic environments. An open-source enthusiast, actively contributing to the developer community and driven by a passion for creating scalable, innovative solutions. Currently pursuing a transition into Python development to expand technical horizons and leverage strong programming fundamentals. Committed to problem-solving, collaboration, and continuous growth.
-        </p>
-        <p>
-            Check out my <a href="https://github.com/niziou">GitHub</a> and <a href="https://www.linkedin.com/in/mateusz-niziolek/">LinkedIn</a>.
-        </p>
-    </div>
-    <div class="code-block">
-        &gt; niziou.currentLocation<br>
-        "Cracow, Poland"<br><br>
-        &gt; niziou.contactInfo<br>
-        ["<a href="mailto:mateusz.niziolek@gmail.com">mateusz.niziolek@gmail.com</a>", "GitHub", "LinkedIn"]<br><br>
-        &gt; niziou.interests<br>
-        ["coding", "yoga", "minimalism", "open-source"]<br><br>
-        &gt; niziou.education<br>
-        "Bachelor's in Computer Science"
-    </div>
+    <main>
+        <header>
+            <p class="eyebrow">Krakow, Poland / Senior Backend Engineer / Tech Lead</p>
+            <h1>Mateusz Niziolek</h1>
+            <p class="intro">
+                I build and operate backend systems for commerce platforms, integrations and business-critical workflows.
+            </p>
+            <nav class="links" aria-label="Contact links">
+                <a href="mailto:mateusz.niziolek@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/mateusz-niziolek/">LinkedIn</a>
+                <a href="https://github.com/niziou">GitHub</a>
+            </nav>
+        </header>
+
+        <section class="grid" aria-labelledby="profile-heading">
+            <div>
+                <h2 id="profile-heading">Profile</h2>
+                <p class="section-copy">
+                    Backend engineer with 11+ years of commercial experience, currently working as a Tech Lead.
+                    I focus on API design, modular architecture, integrations, production troubleshooting and
+                    delivery quality in cross-functional teams.
+                </p>
+            </div>
+            <div>
+                <h2>Current Focus</h2>
+                <ul>
+                    <li>Backend architecture</li>
+                    <li>REST and GraphQL APIs</li>
+                    <li>Adobe Commerce Cloud</li>
+                    <li>Python, FastAPI and Django</li>
+                    <li>Linux, logs and incident work</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="grid" aria-labelledby="work-heading">
+            <div>
+                <h2 id="work-heading">Work</h2>
+                <p class="section-copy">
+                    I have led backend delivery for high-traffic commerce systems, worked with international clients,
+                    designed product configuration and pricing flows, and built integrations around Magento,
+                    Symfony-based services and modern service-oriented architecture.
+                </p>
+            </div>
+            <div>
+                <h2>Selected Stack</h2>
+                <ul>
+                    <li>PHP, Symfony, Magento</li>
+                    <li>Python, FastAPI, Django</li>
+                    <li>Node.js fundamentals</li>
+                    <li>Docker, Git, CI/CD</li>
+                    <li>New Relic, SSH, production diagnostics</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="grid" aria-labelledby="proof-heading">
+            <div>
+                <h2 id="proof-heading">Proof</h2>
+                <p class="section-copy">
+                    Adobe Certified Professional - Magento Commerce Developer, Hyva Certified Developer,
+                    Cambridge English: Advanced. Open to senior backend and technical leadership roles.
+                </p>
+            </div>
+            <div>
+                <h2>Projects</h2>
+                <ul>
+                    <li>Portfolio Valuation API</li>
+                    <li>Django Training Tracker</li>
+                    <li>Commerce integrations</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <span>Available for backend engineering roles.</span>
+            <span>Last updated 2026.</span>
+        </footer>
+    </main>
 </body>
 </html>
